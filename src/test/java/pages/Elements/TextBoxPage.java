@@ -1,21 +1,15 @@
-package pages;
+package pages.Elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.util.List;
 
-public class ElementsTextBoxPage {
+public class TextBoxPage {
     public WebDriver driver;
     public WebDriverWait wdwait;
-    WebElement fullnameTextBox;
-    WebElement emailTextBox;
-    WebElement currentAddressTextBox;
-    WebElement permanentAddressTextBox;
-    WebElement submitButton;
 
-    public ElementsTextBoxPage(WebDriver driver, WebDriverWait wdwait) {
+    public TextBoxPage(WebDriver driver, WebDriverWait wdwait) {
         this.driver = driver;
         this.wdwait = wdwait;
     }

@@ -1,18 +1,15 @@
-package pages;
+package pages.Elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ElementsCheckboxPage {
+public class CheckboxPage {
     public WebDriver driver;
     public WebDriverWait wdwait;
-    WebElement homeCheckbox;
-    WebElement expandAllButton;
-    WebElement collapseAllButton;
 
-    public ElementsCheckboxPage(WebDriver driver, WebDriverWait wdwait) {
+    public CheckboxPage(WebDriver driver, WebDriverWait wdwait) {
         this.driver = driver;
         this.wdwait = wdwait;
     }

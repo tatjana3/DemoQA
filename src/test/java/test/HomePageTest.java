@@ -18,22 +18,19 @@ public class HomePageTest extends BasePage {
     @Test
     public void verifyThatJoinNowImageLeadsToSeleniumTrainingPage(){
         homePage.clickJoinNow();
-        ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+        ArrayList<String> newTab = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(newTab.get(1));
 
-        String expectedURL = "https://www.toolsqa.com/selenium-training/";
-        String actualURL = driver.getCurrentUrl();
+        assertURL(2,1);
 
-        Assert.assertEquals(actualURL,expectedURL);
-
-        String expectedHeading = "Selenium Certification Training | Enroll Now | Study Online";
+        String expectedHeading = excelReader.getStringData("ElementNames",1,14);
         String actualHeading = driver.findElement(By.className("enroll__heading")).getText();
 
         Assert.assertEquals(actualHeading, expectedHeading);
     }
 
     @Test
-    public void verifyThatElementsCardLeadsToElementsPage() throws InterruptedException {
+    public void verifyThatElementsCardLeadsToElementsPage() {
 
         try {
             homePage.clickCard("Elements");
@@ -42,14 +39,9 @@ public class HomePageTest extends BasePage {
             homePage.clickCard("Elements");
 
         }
-        String expectedMainHeader = "Elements";
-        String actualMainHeader =  driver.findElement(By.className("main-header")).getText();
 
-        Assert.assertEquals(actualMainHeader,expectedMainHeader);
-
-        String expectedURL = "https://demoqa.com/elements";
-        String actualURL = driver.getCurrentUrl();
-        Assert.assertEquals(actualURL, expectedURL);
+        assertMainHeader(1,0);
+        assertURL(3,1);
     }
     @Test
     public void verifyThatFormsCardLeadsToFormsPage(){
@@ -60,15 +52,8 @@ public class HomePageTest extends BasePage {
             homePage.clickCard("Forms");
 
         }
-        String expectedMainHeader = "Forms";
-        String actualMainHeader =  driver.findElement(By.className("main-header")).getText();
-
-        Assert.assertEquals(actualMainHeader,expectedMainHeader);
-
-        String actualURL = "https://demoqa.com/forms";
-        String expectedURL = driver.getCurrentUrl();
-
-        Assert.assertEquals(actualURL,expectedURL);
+        assertMainHeader(2,0);
+        assertURL(4,1);
     }
     @Test
     public void verifyThatAlertsFrameAndWindowsCardLeadsToAlertsFrameAndWindowsPage(){
@@ -79,15 +64,8 @@ public class HomePageTest extends BasePage {
             homePage.clickCard("Alerts, Frame & Windows");
 
         }
-        String expectedMainHeader = "Alerts, Frame & Windows";
-        String actualMainHeader =  driver.findElement(By.className("main-header")).getText();
-
-        Assert.assertEquals(actualMainHeader,expectedMainHeader);
-
-        String expectedURL = "https://demoqa.com/alertsWindows";
-        String actualURL = driver.getCurrentUrl();
-
-        Assert.assertEquals(actualURL,expectedURL);
+        assertMainHeader(3,0);
+        assertURL(5,1);
     }
 
     @Test
@@ -97,17 +75,9 @@ public class HomePageTest extends BasePage {
         }
         catch(org.openqa.selenium.StaleElementReferenceException ex){
             homePage.clickCard("Widgets");
-
         }
-        String expectedMainHeader = "Widgets";
-        String actualMainHeader =  driver.findElement(By.className("main-header")).getText();
-
-        Assert.assertEquals(actualMainHeader,expectedMainHeader);
-
-        String expectedURL = "https://demoqa.com/widgets";
-        String actualURL = driver.getCurrentUrl();
-
-        Assert.assertEquals(actualURL, expectedURL);
+        assertMainHeader(4,0);
+        assertURL(6,1);
     }
     @Test
     public void verifyThatInteractionsCardLeadsToInteractionsPage(){
@@ -116,17 +86,9 @@ public class HomePageTest extends BasePage {
         }
         catch(org.openqa.selenium.StaleElementReferenceException ex){
             homePage.clickCard("Interactions");
-
         }
-        String expectedMainHeader = "Interactions";
-        String actualMainHeader =  driver.findElement(By.className("main-header")).getText();
-
-        Assert.assertEquals(actualMainHeader,expectedMainHeader);
-
-        String actualURL = "https://demoqa.com/interaction";
-        String expectedURL = driver.getCurrentUrl();
-
-        Assert.assertEquals(actualURL, expectedURL);
+        assertMainHeader(5,0);
+        assertURL(7,1);
     }
     @Test
     public void verifyThatBookStoreApplicationLeadsToBookStore(){
@@ -136,16 +98,8 @@ public class HomePageTest extends BasePage {
         }
         catch(org.openqa.selenium.StaleElementReferenceException ex){
             homePage.clickCard("Book Store Application");
-
         }
-        String expectedMainHeader = "Book Store";
-        String actualMainHeader =  driver.findElement(By.className("main-header")).getText();
-
-        Assert.assertEquals(actualMainHeader,expectedMainHeader);
-
-        String expectedURL = "https://demoqa.com/books";
-        String actualURL = driver.getCurrentUrl();
-
-        Assert.assertEquals(actualURL,expectedURL);
+        assertMainHeader(2,12);
+        assertURL(8,1);
     }
 }

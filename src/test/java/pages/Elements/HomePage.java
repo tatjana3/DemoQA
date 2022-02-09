@@ -1,4 +1,4 @@
-package pages;
+package pages.Elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,10 +9,6 @@ import java.util.List;
 public class HomePage {
     public WebDriver driver;
     public WebDriverWait wdwait;
-    List<WebElement> cards;
-    WebElement joinNow;
-    WebElement menuList;
-
 
     public HomePage(WebDriver driver, WebDriverWait wdwait) {
         this.driver = driver;

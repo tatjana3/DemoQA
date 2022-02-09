@@ -1,4 +1,4 @@
-package pages;
+package pages.Elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -6,14 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ElementsRadioButtonPage {
+public class RadioButtonPage {
     public WebDriver driver;
     public WebDriverWait wdwait;
-    WebElement yesRadioButton;
-    WebElement impressiveRadioButton;
-    WebElement noRadioButton;
 
-    public ElementsRadioButtonPage(WebDriver driver, WebDriverWait wdwait) {
+    public RadioButtonPage(WebDriver driver, WebDriverWait wdwait) {
         this.driver = driver;
         this.wdwait = wdwait;
     }
